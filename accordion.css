@@ -9,11 +9,48 @@
 }
 .accordion {
   position: relative;
+  padding-left: 40px;
+}
+
+.accordion-head {
+  border-bottom: solid 1px black;
+}
+
+.accordion-body {
+  margin-left: 5px;
+}
+
+.accordion-head::before {
+  display: block;
+  content: ' ';
+  background-color: black;
+  background-size: 28px 28px;
+  height: 28px;
+  width: 28px;
+  position:absolute;
+  left:0;
+}
+
+.plus {
+  position: absolute;
+  right:0;
+  top:25px;
+}
+
+.plus rect {
+  transition: all 500ms;
+  transform: scaleY(1);
+  transform-origin: 50% 50%;
+}
+
+.open svg.plus .vertical-line {
+  transform: scaleY(0);
 }
 
 .open.accordion:after {
   display:none;
 }
+
 .accordion:after {
   position: absolute;
   bottom: 0;  
