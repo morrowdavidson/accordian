@@ -13,8 +13,13 @@ var jsaccordion = {
 
   select : function () {
   // select() : fired when user clicks on a header
-    console.log(this);
     this.classList.toggle("open");
+  
+    if (this.style.maxHeight){
+      this.style.maxHeight = null;
+    } else {
+      this.style.maxHeight = this.scrollHeight + "px";
+    }
   }
 };
 
@@ -22,3 +27,18 @@ var jsaccordion = {
 window.addEventListener('load', function(){
   jsaccordion.init();
 });
+
+// var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// }
