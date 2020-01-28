@@ -1,0 +1,6 @@
+.accordion-body {
+  display: none;
+}
+.open .accordion-body {
+  display: block;
+}
